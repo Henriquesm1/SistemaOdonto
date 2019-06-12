@@ -1,5 +1,5 @@
 # SistemaOdonto
-Procedimento para Criação de tabelas no SQLSERVER
+Procedimento para Criação de tabelas no SQLSERVER utilizar o entityFramework
 
 DATABASE name[clinic]
 
