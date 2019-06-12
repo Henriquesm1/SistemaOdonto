@@ -1,0 +1,107 @@
+# SistemaOdonto
+Procedimento para Criação de tabelas no SQLSERVER
+
+DATABASE name[clinic]
+
+tabela de consuta 
+
+USE [clinic]
+GO
+
+/****** Object:  Table [dbo].[Consulta]    Script Date: 12/06/2019 08:13:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Consulta](
+	[ID_CONSULTA] [int] IDENTITY(1,1) NOT NULL,
+	[ID_DENTISTA] [int] NOT NULL,
+	[ID_PACIENTE] [int] NOT NULL,
+	[DATA_CONSULTA] [datetime] NULL,
+	[HORAMARCADA_CONSULTA] [datetime] NULL,
+	[HORAINICIO_CONSULTA] [datetime] NULL,
+	[HORAFIM_CONSULTA] [datetime] NULL,
+	[OBSERVACOES_CONSULTA] [nvarchar](max) NULL,
+	[STATUS_CONSULTA] [nvarchar](max) NULL,
+ CONSTRAINT [PK_dbo.Consulta] PRIMARY KEY CLUSTERED 
+(
+	[ID_CONSULTA] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+tabela de Dentista
+
+USE [clinic]
+GO
+
+/****** Object:  Table [dbo].[Dentista]    Script Date: 12/06/2019 08:14:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Dentista](
+	[ID_DENTISTA] [int] IDENTITY(1,1) NOT NULL,
+	[NOME_DENTISTA] [nvarchar](max) NULL,
+	[EMAIL_DENTISTA] [nvarchar](max) NULL,
+	[TELEFONE_DENTISTA] [bigint] NOT NULL,
+	[CELULAR_DENTISTA] [bigint] NOT NULL,
+	[CRO] [nvarchar](max) NULL,
+ CONSTRAINT [PK_dbo.Dentista] PRIMARY KEY CLUSTERED 
+(
+	[ID_DENTISTA] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+Tabela de paciente
+
+USE [clinic]
+GO
+
+/****** Object:  Table [dbo].[Paciente]    Script Date: 12/06/2019 08:14:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Paciente](
+	[ID_PACIENTE] [int] IDENTITY(1,1) NOT NULL,
+	[NOME_PACIENTE] [nvarchar](max) NULL,
+	[EMAIL_PACIENTE] [nvarchar](max) NULL,
+	[TELEFONE_PACIENTE] [bigint] NOT NULL,
+	[CELULAR_PACIENTE] [bigint] NOT NULL,
+	[CEP_PACIENTE] [nvarchar](max) NULL,
+	[ENDERECO_PACIENTE] [nvarchar](max) NULL,
+	[COMPLEMENTO_PACIENTE] [nvarchar](max) NULL,
+	[NASCIMENTO_PACIENTE] [datetime] NOT NULL,
+	[SEXO_PACIENTE] [nvarchar](max) NULL,
+ CONSTRAINT [PK_dbo.Paciente] PRIMARY KEY CLUSTERED 
+(
+	[ID_PACIENTE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
